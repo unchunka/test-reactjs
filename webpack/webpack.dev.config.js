@@ -1,8 +1,8 @@
 var webpack = require('webpack');
 var path = require('path');
- 
+
 var parentDir = path.join(__dirname, '../');
- 
+
 module.exports = {
     entry: [
         path.join(parentDir, 'index.js')
@@ -10,7 +10,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/,
+                test: /\.(jsx?|tsx?)$/,
                 exclude: /node_modules/,
                 use:{
                     loader: 'babel-loader',
@@ -28,7 +28,7 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.css', '.scss'],
+        extensions: ['.js', '.jsx', '.css', '.scss','.ts','.tsx'],
     },
     output: {
         path: parentDir + 'dist',
