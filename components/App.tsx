@@ -8,6 +8,7 @@ import Skills from "./content/Skills";
 import Contact from "./content/Contact";
 import {BrowserRouter as Router, Link, Route} from "react-router-dom";
 import {Page} from './Nav';
+import Hobbies from "./content/Hobbies";
 
 export default class App extends Component {
 
@@ -24,7 +25,8 @@ export default class App extends Component {
         this.pages = [
             { name:'home', component: Home, path: pathName , index:0},
             { name:'compétences', component: Skills, path: pathName + '/skills', index:1},
-            { name:'contact', component: Contact, path: pathName + '/contact', index:2}
+            { name:'loisirs', component: Hobbies, path: pathName + '/hobbies', index:2},
+            { name:'contact', component: Contact, path: pathName + '/contact', index:3}
         ]
 
     }

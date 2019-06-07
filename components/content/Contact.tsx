@@ -65,7 +65,7 @@ export default class Contact extends Content<ContactState> {
 
         if (this.state.email && this.state.message) {
 
-            axios.post('http://localhost/test-reactjs/mail.php', qs.stringify({
+            axios.post('mail.php', qs.stringify({
                 email: this.state.email,
                 name: this.state.name,
                 message: this.state.message
@@ -112,16 +112,16 @@ export default class Contact extends Content<ContactState> {
                     <TextField
                         required
                         label="Message"
-                        placeholder="Enter your message"
+                        placeholder="Taper votre message"
                         multiline
                         margin="normal"
-                        className="message textField"
+                        className="textField"
                         onChange={this.handleChangeOnMessage}
                         fullWidth
                         error= {this.state.errorMessage}
                     />
                     <Button variant="contained" className="send" onClick={this.handleClickOnSend}>
-                        Send
+                        Envoyer
                     </Button>
                     <Dialog
                         open={this.state.open}

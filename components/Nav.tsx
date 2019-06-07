@@ -8,10 +8,10 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import FaceIcon from '@material-ui/icons/DirectionsBike';
+import FaceIcon from '@material-ui/icons/Face';
 import {Link, Route} from "react-router-dom";
 import './css/nav';
-//import Content from 'content/Content';
+import Button from '@material-ui/core/Button';
 
 export interface Page {
     name:string,
@@ -41,7 +41,7 @@ export default class Nav extends Component<any,NavState> {
         this.pages = props.pages;
 
         let index = this.getCurrentIndex();
-        this.setState({ index:index });
+        this.state.index = index;
 
         this.handleChangeOnTabs = this.handleChangeOnTabs.bind(this);
         this.handleCloseMenu = this.handleCloseMenu.bind(this);
@@ -90,6 +90,12 @@ export default class Nav extends Component<any,NavState> {
 
     }
 
+    handleDownloadClick() {
+
+        window.open('doc/CV.pdf');
+
+    }
+
     render() {
 
         const anchorEl = this.state.anchorEl;
@@ -99,7 +105,7 @@ export default class Nav extends Component<any,NavState> {
         return <AppBar position="static" color="default" className="nav" component="div">
             <Toolbar>
                 <IconButton color="inherit" aria-label="Open drawer">
-                    <MenuIcon onClick={this.handleClickOnMenu} />
+                    <MenuIcon onClick={this.handleClickOnMenu} className="menuIcon"/>
                 </IconButton>
                 <Menu
                     anchorEl={anchorEl}
@@ -107,13 +113,13 @@ export default class Nav extends Component<any,NavState> {
                     onClose={this.handleCloseMenu}
                 >
                     {this.pages.map(item =>
-                        <MenuItem onClick={this.handleClickOnMenuItem}>
+                        <MenuItem onClick={this.handleClickOnMenuItem} className="menuItem">
                             <Link className="link" to={item.path}>{item.name}</Link>
                         </MenuItem>
                     )}
                 </Menu>
                 <div className="rightToolbar">
-                    <FaceIcon fontSize="large" />
+                    <Button className="download" onClick={this.handleDownloadClick}>Télécharger mon CV</Button>
                 </div>
             </Toolbar>
             <Tabs value={this.state.index} onChange={this.handleChangeOnTabs} classes={{indicator:'indicator'}} className={"tabs"}>

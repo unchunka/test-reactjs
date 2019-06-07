@@ -4,9 +4,18 @@ body {
   font-size:16px;
 }
 
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
 li {
   color:black;
   margin-bottom:20px;
+}
+
+a {
+  color:#206dd2;
 }
 
 #main {
@@ -37,6 +46,14 @@ footer {
   .nav {
     .tabs {
       display:none;
+    }
+    .menuIcon {
+      font-size: 35px;
+    }
+  }
+  .pictures {
+    .paperList {
+      max-width: 100%;
     }
   }
 }

@@ -10,8 +10,18 @@
 
   .rightToolbar {
     margin-left:auto;
+
+    .download {
+      background:#94e596;
+    }
+
   }
 
+}
+
+.menuItem {
+  padding:0px !important;//hack
+  height:50px !important;//hack
 }
 
 .link {
@@ -19,4 +29,5 @@
   color:#63AFA1;
   text-transform: uppercase;
   width:100%;
+  padding:10px;
 }
