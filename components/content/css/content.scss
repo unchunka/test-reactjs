@@ -1,6 +1,18 @@
 .content {
 
-  background:white;
-  padding:20px;
+  padding:10px;
+
+  h1, h2, h3, h4 {
+    color:#094052;
+  }
+
+  p, ul, li {
+    color:#1a647d;
+  }
+
+  .gridItem {
+    padding:20px;
+  }
 
 }
+

@@ -103,7 +103,7 @@ export default class Nav extends Component<any,NavState> {
         const open = Boolean(anchorEl);
 
         return <AppBar position="static" color="default" className="nav" component="div">
-            <Toolbar>
+            <Toolbar classes={{root:'toolbar'}}>
                 <IconButton color="inherit" aria-label="Open drawer">
                     <MenuIcon onClick={this.handleClickOnMenu} className="menuIcon"/>
                 </IconButton>
@@ -122,7 +122,7 @@ export default class Nav extends Component<any,NavState> {
                     <Button className="download" onClick={this.handleDownloadClick}>Télécharger mon CV</Button>
                 </div>
             </Toolbar>
-            <Tabs value={this.state.index} onChange={this.handleChangeOnTabs} classes={{indicator:'indicator'}} className={"tabs"}>
+            <Tabs value={this.state.index} onChange={this.handleChangeOnTabs} classes={{root:'tabs',indicator:'indicator'}} className={"tabs"}>
                 {this.pages.map(item =>
                     //@ts-ignore
                     <Tab label={item.name} component={Link} to={item.path}></Tab>

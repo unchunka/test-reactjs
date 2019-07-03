@@ -14,7 +14,7 @@ export default class Home extends Content<any>  {
     getContent() {
 
         return <div>
-            <p>Bienvenue sur mon site.</p>
+            <p>Bienvenue sur mon site :)</p>
             <p>Vous pouvez trouver ici des infos sur mon profil professionnel.</p>
         </div>
 
